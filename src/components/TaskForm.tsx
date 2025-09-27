@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { XMarkIcon, InformationCircleIcon, MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
 import Dropdown, { DropdownOption } from './Dropdown'
+import { projectNames, workTypes } from '@/lib/feedData'
 
 interface TaskFormProps {
   isOpen: boolean
@@ -16,22 +17,17 @@ interface TaskFormProps {
   }
 }
 
-const projectOptions: DropdownOption[] = [
-  { value: 'Project Name', label: 'Project Name' },
-  { value: 'Homepage Development', label: 'Homepage Development' },
-  { value: 'Mobile App Development', label: 'Mobile App Development' },
-  { value: 'API Development', label: 'API Development' },
-  { value: 'Database Design', label: 'Database Design' }
-]
+const projectOptions: DropdownOption[] = projectNames.map((name) => ({
+  value: name,
+  label: name
+}));
 
-const workTypeOptions: DropdownOption[] = [
-  { value: 'Bug fixes', label: 'Bug fixes' },
-  { value: 'Feature Development', label: 'Feature Development' },
-  { value: 'Code Review', label: 'Code Review' },
-  { value: 'Testing', label: 'Testing' },
-  { value: 'Documentation', label: 'Documentation' },
-  { value: 'Meeting', label: 'Meeting' }
-]
+
+const workTypeOptions: DropdownOption[] = workTypes.map((type) => ({
+  value: type,
+  label: type
+}));
+
 
 export default function TaskForm({ isOpen, onClose, onSave, initialTask }: TaskFormProps) {
   const [projectName, setProjectName] = useState(initialTask?.projectName || 'Project Name');
