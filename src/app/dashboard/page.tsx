@@ -135,17 +135,9 @@ export default function DashboardPage() {
 
       const response = await timesheetApi.getTimesheets(requestFilters);
       // If no timesheets exist, dummy sample data
-      if (response.timesheets.length === 0 && filters.page === 1) {
-        await timesheetApi.dummySampleData()
-        const updatedResponse = await timesheetApi.getTimesheets(requestFilters)
-        const formattedData = formatTimesheetData(updatedResponse.timesheets)
-        setTimesheetData(formattedData)
-        setPagination(updatedResponse.pagination)
-      } else {
-        const formattedData = formatTimesheetData(response.timesheets)
-        setTimesheetData(formattedData)
-        setPagination(response.pagination)
-      }
+      const formattedData = formatTimesheetData(response.timesheets)
+      setTimesheetData(formattedData)
+      setPagination(response.pagination)
     } catch (err) {
       if (err instanceof ApiError) {
         setError(err.message);

@@ -16,9 +16,16 @@ This is a Next.js application for a timesheet management system.
 *   **Dashboard:** A dashboard to display relevant information.
 *   **API:** A RESTful API for managing users, timesheets, and tasks.
 
+## Live Demo
+
+[https://tentwenty-assestment.vercel.app/](https://tentwenty-assestment.vercel.app/)
+
+
 ## Getting Started
 
 ### Dummy Account
+
+This is a dummy account for testing purposes. You can use these credentials to log in and test the application.
 
 *   **Email:** johndoe@gmail.com
 *   **Password:** password123
