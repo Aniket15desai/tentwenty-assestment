@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import connectDB from "@/lib/mongodb";
 import Timesheet from "@/models/Timesheet";
-import { authOptions } from "../../auth/[...nextauth]/route";
+import authOptions from "../../auth/[...nextauth]/authOptions";
 
 // GET /api/timesheets/:id
 export async function GET(

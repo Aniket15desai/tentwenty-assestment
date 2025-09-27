@@ -44,7 +44,7 @@ export default function TimesheetCreateModal({
       toast.success('Timesheet created successfully');
       onSuccess();
       onClose();
-    } catch (err: any) {
+    } catch (err) {
       toast.error(err?.message || 'Error creating timesheet');
     }
   };
