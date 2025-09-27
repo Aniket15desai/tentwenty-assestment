@@ -102,3 +102,62 @@ This is a dummy account for testing purposes. You can use these credentials to l
 *   **Schema Validation:** [Zod](https://zod.dev/)
 *   **UI Components:** [Headless UI](https://headlessui.dev/)
 *   **Icons:** [Heroicons](https://heroicons.com/)
+
+## Project Structure
+
+```
+src/
+├───app/
+│   ├───favicon.ico
+│   ├───globals.css
+│   ├───layout.tsx
+│   ├───page.tsx
+│   ├───api/
+│   │   ├───auth/
+│   │   │   └───[...nextauth]/
+│   │   │       └───route.ts
+│   │   ├───feed-data/
+│   │   │   └───route.ts
+│   │   ├───register/
+│   │   │   └───route.ts
+│   │   └───timesheets/
+│   │       ├───route.ts
+│   │       └───[id]/
+│   │           ├───route.ts
+│   │           └───tasks/
+│   │               ├───route.ts
+│   │               └───[taskId]/
+│   │                   └───route.ts
+│   ├───dashboard/
+│   │   └───page.tsx
+│   ├───login/
+│   │   └───page.tsx
+│   ├───register/
+│   │   └───page.tsx
+│   └───timesheet/
+│       └───[id]/
+│           └───page.tsx
+├───components/
+│   ├───AuthLayout.tsx
+│   ├───Dropdown.tsx
+│   ├───ErrorComponent.tsx
+│   ├───Footer.tsx
+│   ├───LoadingScreen.tsx
+│   ├───Navbar.tsx
+│   ├───Pagination.tsx
+│   ├───Providers.tsx
+│   ├───SortingArrow.tsx
+│   ├───Table.tsx
+│   ├───TaskForm.tsx
+│   └───TimesheetCreateModal.tsx
+├───lib/
+│   ├───api.ts
+│   ├───feedData.ts
+│   └───mongodb.ts
+├───models/
+│   ├───Timesheet.ts
+│   └───User.ts
+└───types/
+    ├───index.ts
+    └───next-auth.d.ts
+```
